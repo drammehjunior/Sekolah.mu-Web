@@ -1,0 +1,54 @@
+{
+  "courses": [
+    {
+      "imageURL": "./photos/photo-1.jpg",
+      "bannerTitle": "Living Tech Newton (5-7 Tahun)",
+      "cardTitle": "Living Tech Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-2.jpg",
+      "bannerTitle": "Living English Newton (5-7 Tahun)",
+      "cardTitle": "Living English Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-3.jpg",
+      "bannerTitle": "Living French Newton (5-7 Tahun)",
+      "cardTitle": "Living French Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-4.jpg",
+      "bannerTitle": "Living Math Newton (5-7 Tahun)",
+      "cardTitle": "Living Math Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-5.jpg",
+      "bannerTitle": "Living Hawkin Newton (5-7 Tahun)",
+      "cardTitle": "Living Hawking Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-6.jpg",
+      "bannerTitle": "Belajar di Sekolahmu (5-7 Tahun)",
+      "cardTitle": "Living Hawking Newton (1-Month Free)"
+    },
+     {
+      "imageURL": "./photos/photo-7.jpg",
+      "bannerTitle": "Living Hawkin Newton (5-7 Tahun)",
+      "cardTitle": "Living Hawking Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-8.jpg",
+      "bannerTitle": "Belajar di Sekolahmu (5-7 Tahun)",
+      "cardTitle": "Living Hawking Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-9.jpg",
+      "bannerTitle": "Belajar di Sekolahmu (5-7 Tahun)",
+      "cardTitle": "Living Hawking Newton (1-Month Free)"
+    },
+    {
+      "imageURL": "./photos/photo-10.jpg",
+      "bannerTitle": "Belajar di Sekolahmu (5-7 Tahun)",
+      "cardTitle": "Living Hawking Newton (1-Month Free)"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sekolah.mu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+    
+    * {
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+      background: #e8eff7;
+    }
+    .grid-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-auto-rows: 375px;
+      
+      grid-gap: 20px;
+      margin: 20px 0;
+    }
+    .card-top img {
+      display: block;
+      width: 100%;
+      max-height: 40%;
+    }
+    .container {
+      width: 95%;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      padding: 0px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+    }
+    .card-top {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      overflow: hidden;
+    }
+    .card-info, .card-bottom{
+      padding: 0 20px;
+    }
+
+    .banner{
+      text-align: center;
+      background-color: #ffb91d;
+      font-weight: bold;
+      word-wrap:break-word;
+      padding: 5px;
+    }
+
+    .card-info h2 {
+      font-size: 18px;
+      margin: 10px 0 5px 0;
+    }
+
+    span,p {
+      font-size: 15px;
+      display: block;
+    }
+    .excerpt {
+      color: #aeaeae;
+    }
+    .highlight {
+      color: black;
+      font-weight: bold;
+    }
+    .flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .card-bottom {
+      margin-top: 20px;
+    }
+    .button {
+      text-decoration: unset;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: white;
+      width: 80px;
+      text-align: center;
+
+      font-size: 15px;
+      line-height: 30px;
+      border-radius: 5px;
+      background: #f2f4f6;
+    }
+    .btn-yellow {
+      background: #ffb91d;
+    }
+
+    .btn-blue{
+      background:rgb(30, 83, 182)
+    
+    }
+
+    .checked {
+    color: orange;
+    }
+    .credit {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  left: 50;
+}
+.tc {
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- div dengan id "template" akan diisi dengan javascript-->
+    <div class="cards grid-row" id="template">
+    </div>    
+  </div>
+  <p class="credit tc">Built by <a href="https://www.linkedin.com/in/mauamadou-drammeh-7922811b8/">Mauamadou Drammeh</p>
+
+
+  
+  <script>
+    var templates = []
+    let templateInput = document.getElementById("template")
+
+    /*fungsi ini digunakan untuk mengambil data JSON yang saya buat */
+    function getJsonData(){
+      fetch("./data/data.json")
+      .then(response => response.json())
+      .then(json => {
+          fixTemplate(json.courses);
+      })
+    }
+
+    /* fungsi ini saya gunakan untuk membuat template dan mengisi template tersebut dengan data yang terambil dari file data JSON */
+    function fixTemplate(result){
+      result.forEach(element => {
+        let imageURL = element.imageURL
+        let banner = element.bannerTitle
+        let cardTitle = element.cardTitle
+
+        templates.push(`<div class="card">
+        <div class="card-top">
+          <img src="${imageURL}" alt="Blog Name" width="251px" height="141px">
+        </div>
+        <div class="banner">${banner}</div>
+        <div class="card-info">
+          <h2>${cardTitle}</h2>
+          <p class="excerpt">oleh <i class="highlight">Sekolah.mu</i></p>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa">(10)</span>
+        </div>
+        <div class="card-bottom flex-row">
+          <a href="#" class="button btn-blue highlight">Gratis</a>
+        </div>
+      </div>`)
+      }
+      );
+
+      templates.forEach(el => {
+        templateInput.innerHTML += el
+      })
+    }
+
+    getJsonData()
+  </script>
+</body>
+</html>
